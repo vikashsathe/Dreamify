@@ -6,11 +6,11 @@
 
 <div class="row mt-3">
   <div class="col-8 offset-3">
-    <h3><%= listing.title %></h3>
+    <h4 style="text-transform: capitalize;"><%= listing.title %></h4>
   </div>
 
-  <div class="card col-6 offset-3 show-card listing-card">
-    <img src="<%= listing.image.url %>" alt="listing_img" class="show-image" />
+  <div class="card col-6 offset-3 show-card listing-card"">
+    <img src="<%= listing.image.url %>" alt="listing_img" class="show-image" style="height: 25rem;"/>
     <div class="card-body">
       Owned by :<i>  <%= listing.owner.username %> </i> <br />
       <%= listing.description %> <br />
@@ -81,15 +81,16 @@
       </div>
       <button class="btn btn-outline-dark">Submit</button>
     </form>
+    <hr />
   </div>
-  <hr />
+
 <% } %>
 
   <% if (listing.reviews.length > 0) { %>  
   <div class="row">
     <p><b>All Reviews</b></p>
   <% for(review of listing.reviews) {%>
-  <div class="card col-5 ms-3 mb-3">
+  <div class="card col-3 ms-3 mb-3">
     <div class="card-body">
       <h6 class="card-title"> <b> @_<%= review.author.username %> </b></h6>
       <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
